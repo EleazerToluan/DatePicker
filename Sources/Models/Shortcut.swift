@@ -93,6 +93,23 @@ extension FastisShortcut where Value == FastisRange {
         }
     }
 
+    /// Range: from **`now.startOfDay - 3 month`** to **`now.endOfDay`**
+    public static var lastQuarter: FastisShortcut {
+        return FastisShortcut(name: "Last Quarter") {
+            let now = Date()
+            let monthAgo = Calendar.current.date(byAdding: .month, value: -3, to: now)!
+            return FastisRange(from: monthAgo.startOfDay(), to: now.endOfDay())
+        }
+    }
+    
+    /// Range: from **`now.startOfDay - 1 year`** to **`now.endOfDay`**
+    public static var lastYear: FastisShortcut {
+        return FastisShortcut(name: "Last Year") {
+            let now = Date()
+            let monthAgo = Calendar.current.date(byAdding: .year, value: -1, to: now)!
+            return FastisRange(from: monthAgo.startOfDay(), to: now.endOfDay())
+        }
+    }
 }
 
 extension FastisShortcut where Value == Date {
