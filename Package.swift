@@ -1,9 +1,7 @@
 // swift-tools-version:5.5
 //
-//  SnapKit
-//
-//  Copyright (c) 2011-Present SnapKit Team - https://github.com/SnapKit
-//
+//  Fastis
+////
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
 //  in the Software without restriction, including without limitation the rights
@@ -33,14 +31,14 @@ let package = Package(
         .library(name: "Fastis", targets: ["Fastis"])
     ],
     dependencies: [
-        .package(url: "https://github.com/patchthecode/JTAppleCalendar", from: "8.0.3"),
-        .package(url: "https://github.com/SnapKit/SnapKit", from: "5.0.1"),
-        .package(url: "https://github.com/ilia3546/PrettyCards", from: "1.0.4")
+        .package(url: "https://github.com/patchthecode/JTAppleCalendar", from: "8.0.5"),
+        .package(url: "https://github.com/simla-tech/PrettyCards", from: "1.0.4"),
+        .package(url: "https://github.com/apple/swift-docc-plugin.git", from: "1.0.0")
     ],
     targets: [
         .target(
             name: "Fastis",
-            dependencies: ["JTAppleCalendar", "SnapKit", "PrettyCards"],
+            dependencies: ["JTAppleCalendar", "PrettyCards"],
             path: "Sources"
         )
     ],
